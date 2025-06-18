@@ -1,15 +1,16 @@
 "use client";
 
 import { Droppable } from "@hello-pangea/dnd";
-import { Column as ColumnType, Task } from "../types/board";
+import { Column as ColumnType} from "../types/board";
 import TaskCard from "./TaskCard";
 import { useBoard } from "../hooks/useBoard";
+import React from "react";
 
 type Props = {
   column: ColumnType;
 };
 
-export default function Column({ column }: Props) {
+ function Column({ column }: Props) {
   const { state } = useBoard();
   const tasks = state.tasks.filter(
     (task) => task.columnId === column.id
@@ -35,3 +36,4 @@ export default function Column({ column }: Props) {
     </div>
   );
 }
+export default React.memo(Column);
