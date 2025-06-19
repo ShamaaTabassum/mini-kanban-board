@@ -1,8 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mini Kanban Board
+
+Mini Kanban Board is a modern task management application built using Next.js, TypeScript, and Tailwind CSS. It provides an intuitive drag-and-drop interface for organizing tasks using the Kanban methodology. This project demonstrates advanced React patterns, state management, and modern UI/UX design principles.
+
+## Features
+
+- **Drag & Drop Interface**: Seamlessly move tasks within and between columns using @hello-pangea/dnd
+- **Task Management**: Create, edit, and delete tasks with inline editing capabilities
+- **Responsive Design**: Fully responsive layout optimized for desktop, tablet, and mobile devices
+- **Modern UI**: Beautiful glassmorphism design with premium gradients and smooth animations
+- **State Management**: Robust state handling using useReducer and useContext patterns
+- **Type Safety**: Built with TypeScript in strict mode for enhanced code reliability
+- **Performance Optimized**: Implements React.memo, useCallback, and efficient re-rendering strategies
 
 ## Getting Started
 
-First, run the development server:
+To get started with the Kanban Board, follow these steps:
+
+### Prerequisites
+
+- Node.js 18+
+- npm, yarn, or pnpm package manager
+
+### Installation
+
+Clone the project repository from GitHub:
+
+```bash
+git clone https://github.com/ShamaaTabassum/mini-kanban-board.git
+```
+
+Install the project dependencies:
+
+```bash
+cd mini-kanban-board
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+### Running Locally
+
+To start the local development server, run the following command:
 
 ```bash
 npm run dev
@@ -10,27 +50,50 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This project uses Turbopack for faster development builds.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open your web browser and navigate to [http://localhost:3000](http://localhost:3000) to access the application.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Building for Production
 
-## Learn More
+To create an optimized production build:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technology Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Framework**: Next.js 15.3.3 (App Router)
+- **Runtime**: React 19.0.0
+- **Language**: TypeScript 5+
+- **Styling**: Tailwind CSS 4.1.10
+- **State Management**: useReducer + useContext
+- **Data Fetching**: TanStack Query 5.80.7
+- **Drag & Drop**: @hello-pangea/dnd 18.0.1
+- **Animations**: Framer Motion 12.18.1
+- **Icons**: Lucide React 0.517.0
 
-## Deploy on Vercel
+## Testing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Run type checking:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run type-check
+```
+
+Build verification:
+
+```bash
+npm run build
+```
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)

@@ -6,6 +6,7 @@ import TaskCard from "./TaskCard";
 import { useBoard } from "../hooks/useBoard";
 import React, { useCallback, useRef } from "react";
 import { Plus } from "lucide-react";
+import { v4 as uuidv4 } from 'uuid';
 
 type Props = {
   column: ColumnType;
@@ -19,7 +20,7 @@ function Column({ column }: Props) {
   ).sort((a, b) => a.position - b.position);
 
   const handleAddTask = useCallback(() => {
-    const newTaskId = crypto.randomUUID();
+    const newTaskId = uuidv4();
     newTaskIdRef.current = newTaskId;
 
     const newTask = {
