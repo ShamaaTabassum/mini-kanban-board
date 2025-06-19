@@ -9,6 +9,8 @@ import {
   DragDropContext,
   DropResult,
 } from "@hello-pangea/dnd";
+import { Loader2 } from "lucide-react";
+import Loader from "./ui/Loader";
 
 export default function Board() {
   const { state, dispatch } = useBoard();
@@ -24,8 +26,16 @@ export default function Board() {
     }
   }, [data, dispatch]);
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error loading board.</div>;
+if (isLoading) {
+  console.log("Loading...");
+ return <Loader />;
+}
+
+if (error) {
+    return (
+      <p>Error...</p>
+    );
+  }
 
   // Handler when drag ends:
   const onDragEnd = (result: DropResult) => {
@@ -51,13 +61,22 @@ export default function Board() {
     });
   };
 
+
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <div className="flex flex-col md:flex-row gap-4 p-4 overflow-x-auto">
-        {state.columns.map((col) => (
-          <Column key={col.id} column={col} />
-        ))}
+    <div className="min-h-screen  flex justify-center items-start">
+      <div className="lg:max-w-7xl lg:w-full w-[70%] py-8">
+        <h1 className="text-2xl font-bold text-violet-800 mb-8 text-center">
+          MINI KANBAN BOARD
+        </h1>
+        
+        <DragDropContext onDragEnd={onDragEnd}>
+          <div className="flex flex-col lg:flex-row justify-center xl:gap-6 gap-4">
+            {state.columns.map((col) => (
+              <Column key={col.id} column={col} />
+            ))}
+          </div>
+        </DragDropContext>
       </div>
-    </DragDropContext>
+    </div>
   );
 }
