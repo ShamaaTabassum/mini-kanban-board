@@ -9,7 +9,6 @@ import {
   DragDropContext,
   DropResult,
 } from "@hello-pangea/dnd";
-import { Loader2 } from "lucide-react";
 import Loader from "./ui/Loader";
 
 export default function Board() {
